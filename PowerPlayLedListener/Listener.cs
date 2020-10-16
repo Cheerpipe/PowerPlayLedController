@@ -10,8 +10,6 @@ namespace PowerPlayLedListener
     public class Listener
     {
         public bool StopListening = false;
-        //private Thread _setterThread;
-        //private readonly ManualResetEvent _setterThreadEvent = new ManualResetEvent(false);
         private bool _shutingDown = false;
         private PowerPlayLedController _deviceController;
         private byte R = 0;
@@ -48,7 +46,6 @@ namespace PowerPlayLedListener
         {
             if (_shutingDown)
                 return;
-
             R = args[0];
             G = args[1];
             B = args[2];
