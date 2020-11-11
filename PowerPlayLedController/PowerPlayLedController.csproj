@@ -38,12 +38,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Device.Net, Version=3.1.0.0, Culture=neutral, PublicKeyToken=7b6bc3f8fb80505e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Device.Net.dll</HintPath>
+      <HintPath>..\packages\Device.Net.3.1.0\lib\net45\Device.Net.dll</HintPath>
     </Reference>
     <Reference Include="Hid.Net, Version=3.1.0.0, Culture=neutral, PublicKeyToken=7b6bc3f8fb80505e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Hid.Net.dll</HintPath>
+      <HintPath>..\packages\Hid.Net.3.1.0\lib\net45\Hid.Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -55,6 +54,9 @@
     <Compile Include="PowerPlayLedController.cs" />
     <Compile Include="PowerPlayLedControllerLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

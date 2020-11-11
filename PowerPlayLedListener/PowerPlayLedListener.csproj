@@ -44,7 +44,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Warez\Utiles\NZXTHUEAmbientListener\</OutputPath>
+    <OutputPath>..\..\..\Warez\Utiles\PowerPlayLedController\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -82,6 +82,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="man.manifest" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -31,6 +31,16 @@ namespace PowerPlayLedListener
                 Util.ngen(Util.NgenOperation.Uninstall);
                 return;
             }
+            int interfaceIndex = 2;
+
+            try
+            {
+                int.TryParse(args.Where(a => a.Contains("--interface:")).FirstOrDefault().Split(':')[1], out interfaceIndex);
+            }
+            catch
+            {
+            }
+
 
             Util.SetPriorityProcessAndThreads(Process.GetCurrentProcess().ProcessName, ProcessPriorityClass.AboveNormal, ThreadPriorityLevel.AboveNormal);
 
@@ -42,14 +52,14 @@ namespace PowerPlayLedListener
 
 
 
-            PowerPlayLedControllerLoader.InitDevice(2).Wait();
+            PowerPlayLedControllerLoader.InitDevice(interfaceIndex).Wait();
 
             if (PowerPlayLedControllerLoader.Devices.Length == 0)
             {
                 throw new Exception("No PowerPlay device found");
             }
 
-            Listener _listener = new Listener(PowerPlayLedControllerLoader.Devices[2]);
+            Listener _listener = new Listener(PowerPlayLedControllerLoader.Devices[interfaceIndex]);
             _listeners.Add(_listener);
 
             if (args.Contains("--shutdown"))
